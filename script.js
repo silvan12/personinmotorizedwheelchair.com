@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     });
     function changeSpeed(){
-        let speed =  15 - Math.pow(Number(localStorage.loopcount) / 10000, 2)
+        let speed =  15 - Math.pow(Number(localStorage.loopcount) / 100000, 2)
         /*If number is not greater than 0*/
         if( Math.sign(speed) !== 1){
             speed = 0.1
