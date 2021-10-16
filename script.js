@@ -10,9 +10,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const person = document.querySelector('.🧑‍🦼')
     const title = document.querySelector('title')
 
+
     /*Set title to loopcount if it exists*/
     if(localStorage.loopcount){
         title.innerHTML = localStorage.loopcount;
+        changeSpeed()
     } else {
         localStorage.loopcount = 0;
     }
@@ -51,6 +53,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
         /*Update title with loop*/
         title.innerHTML = "Loops: "+localStorage.loopcount;
+
+        /*Update the speed*/
+        changeSpeed()
+
+
     });
+    function changeSpeed(){
+        let speed =  15 - Math.pow(Number(localStorage.loopcount) / 10000, 2)
+        /*If number is not greater than 0*/
+        if( Math.sign(speed) !== 1){
+            speed = 0.1
+        }
+        person.setAttribute('style', 'animation: clean '+speed+'s linear infinite')
+    }
 
 });
+
+/*Resets the loop (call in console)*/
+function Reset(){
+    localStorage.loopcount = 0;
+    return "Reset loop count"
+}
+
+/*Sets your loop to specified amount*/
+function Loopcount(amount){
+    if (typeof amount !== "number" || Math.sign(amount) !== 1){
+        return "Amount has to be a number greater than 0"
+    }
+    localStorage.loopcount = amount
+}

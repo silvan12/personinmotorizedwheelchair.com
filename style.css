@@ -10,7 +10,9 @@
 .🧑‍🦼 {
     display: inline-block;
     padding-left: 100%;
-    animation: clean 3s linear infinite;
+    /* We comment this here and instead add it in the html itself so we can change it with JS
+    animation: clean 15s linear infinite;
+    */
 }
 
 @keyframes clean {
