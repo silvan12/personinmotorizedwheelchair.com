@@ -8,8 +8,7 @@ body {
 }
 
 .person_container {
-
-    font-size: 30vw;
+    font-size: 60vmin;
     display: inline-block;
     padding-left: 100%;
 
