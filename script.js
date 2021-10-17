@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         /*queries*/
         const iconlink = document.querySelector('#icon')
-        const person = document.querySelector('.🧑‍🦼')
+        const person = document.querySelector('.person_container')
         const title = document.querySelector('title')
 
 
@@ -75,16 +75,10 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 )
 
-/*Resets the loop (call in console)*/
+/*Resets the loop*/
 function Reset() {
-    localStorage.loopcount = 0;
-    return "Reset loop count"
-}
-
-/*Sets your loop to specified amount*/
-function Loopcount(amount) {
-    if (typeof amount !== "number" || Math.sign(amount) !== 1) {
-        return "Amount has to be a number greater than 0"
+    if(confirm("Are you sure?")){
+        localStorage.loopcount = 0;
+        location.reload()
     }
-    localStorage.loopcount = amount
 }
