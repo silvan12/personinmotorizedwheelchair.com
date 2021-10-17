@@ -14,7 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
         /*Set title to loopcount if it exists*/
         if (localStorage.loopcount) {
             title.innerHTML = localStorage.loopcount;
-            changeSpeed()
         } else {
             localStorage.loopcount = 0;
         }
@@ -56,29 +55,10 @@ window.addEventListener('DOMContentLoaded', () => {
             /*Update title with loop*/
             title.innerHTML = "Loops: " + localStorage.loopcount;
 
-            /*Update the speed*/
-            changeSpeed()
 
 
-        }
-
-
-        function changeSpeed() {
-            let speed = 15 - 0.03 * Number(localStorage.loopcount);
-            /*If number is not greater than 0*/
-            if (Math.sign(speed) !== 1) {
-                speed = 0.1
-            }
-            person.setAttribute('style', 'animation: clean ' + speed + 's linear infinite')
         }
 
     }
 )
 
-/*Resets the loop*/
-function Reset() {
-    if(confirm("Are you sure?")){
-        localStorage.loopcount = 0;
-        location.reload()
-    }
-}
