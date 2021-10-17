@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         /*queries*/
         const iconlink = document.querySelector('#icon')
-        const person = document.querySelector('.person_container')
+        const person = document.querySelector('.person')
         const title = document.querySelector('title')
 
 
