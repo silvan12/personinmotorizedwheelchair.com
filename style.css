@@ -17,15 +17,12 @@ body {
     position: relative;
 }
 
-.person_container {
+.person {
+    margin: 0;
+    font-weight: normal;
     font-size: 60vmin;
     display: inline-block;
     padding-left: 100%;
-
-
-    /*
-    animation: clean 15s linear infinite;
-    */
 }
 
 @keyframes clean {
